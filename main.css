@@ -64,7 +64,7 @@ main {
 
 .register-to-vote {
     position: absolute;
-    bottom: 5rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 3rem;
