@@ -136,6 +136,7 @@ main {
         gap: 20px; /* Adjust gap for mobile if necessary */
         position: absolute;
         width: 50%;
+        z-index: 3;
     }
 }
 
