@@ -138,6 +138,23 @@ main {
         width: 50%;
         z-index: 3;
     }
+
+
+    .register-to-vote {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 5rem;
+        letter-spacing: -3px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: lighter;
+        color: black;
+        text-align: center;
+        z-index: 2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Thinner outline */
+    }
 }
 
 
