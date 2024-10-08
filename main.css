@@ -1,0 +1,189 @@
+html {
+    margin: 0;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents scrolling */
+    cursor: url('VOTECURSOR.png'), default; /* Custom cursor */
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    background-color: white;
+    overflow: hidden; /* Prevents scrolling */
+    cursor: url('VOTECURSOR.png'), default; /* Custom cursor */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
+}
+
+.voting-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33vh;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    z-index: 2;
+}
+
+.voting-info a {
+    color: black;
+    text-decoration: none;
+}
+
+.voting-info a:hover {
+    text-decoration: underline;
+}
+
+.slideshow {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slideshow img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 1;
+    cursor: url('VOTECURSOR.png'), default;
+}
+
+.register-to-vote {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: black;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Thinner outline */
+}
+
+/* Button Style */
+.explore-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem; /* Same size as the voting info text */
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.explore-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Explore Postcards Images */
+.explore-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1;
+    pointer-events: auto; /* Enable interaction */
+}
+
+/* Explore Postcards Images */
+.explore-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    grid-template-columns: repeat(5, 1fr); /* Default: 5 columns in the grid */
+    gap: 20px; /* Increased space between images */
+    z-index: 1;
+    pointer-events: auto; /* Enable interaction */
+    padding: 1rem; /* Padding around the grid */
+}
+
+.explore-container img {
+    width: 100%;
+    bottom: 10%;
+    height: auto;
+    cursor: grab;
+    transition: transform 0.3s ease; /* Smooth drag transition */
+}
+
+/* Mobile view - 2 columns and 5 rows */
+@media (max-width: 768px) {
+    .explore-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 20px; /* Adjust gap for mobile if necessary */
+        position: absolute;
+        width: 50%;
+    }
+}
+
+
+
+/* Add styling to draggable images */
+.explore-container img.dragging {
+    cursor: grabbing;
+}
+
+/* Ensure the images are aligned by top */
+.explore-container {
+    align-items: start;
+}
+
+/* Popup modal for the enlarged image */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Style for the enlarged image */
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Close button (X) */
+.popup .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* When hovering over the close button */
+.popup .close-btn:hover {
+    color: #f1f1f1;
+}
